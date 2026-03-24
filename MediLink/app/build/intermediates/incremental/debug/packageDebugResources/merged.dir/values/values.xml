@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#4CAF50</color>
+    <color name="accent_bg">#E8F5E9</color>
+    <color name="accent_light">#81C784</color>
+    <color name="background">#F5F9FA</color>
+    <color name="black">#000000</color>
+    <color name="border">#E0E0E0</color>
+    <color name="border_light">#F0F0F0</color>
+    <color name="danger">#EF5350</color>
+    <color name="danger_light">#FFEBEE</color>
+    <color name="doctor_dark_teal">#009688</color>
+    <color name="doctor_green">#4CAF50</color>
+    <color name="doctor_orange">#FF7043</color>
+    <color name="doctor_purple">#7E57C2</color>
+    <color name="doctor_red">#FF5722</color>
+    <color name="doctor_teal">#008080</color>
+    <color name="info">#2196F3</color>
+    <color name="primary">#008080</color>
+    <color name="primary_dark">#006666</color>
+    <color name="primary_light">#00B3B3</color>
+    <color name="primary_variant">#005F5F</color>
+    <color name="secondary">#E0F7FA</color>
+    <color name="secondary_variant">#B2EBF2</color>
+    <color name="splash_end">#00B3B3</color>
+    <color name="splash_start">#005F5F</color>
+    <color name="star">#FFC107</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_muted">#9E9E9E</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#616161</color>
+    <color name="transparent">#00000000</color>
+    <color name="warning">#FF9800</color>
+    <color name="warning_light">#FFF3E0</color>
+    <color name="white">#FFFFFF</color>
+    <string name="account_created">Account created successfully!</string>
+    <string name="add_medication">Add Medication</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="all">All</string>
+    <string name="app_name">MediLink</string>
+    <string name="appointment_history">Appointment History</string>
+    <string name="as_needed">As Needed</string>
+    <string name="back_to_sign_in">Back to Sign In</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="booking_success">Appointment booked successfully!</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="cardiology">Cardiology</string>
+    <string name="completed">Completed</string>
+    <string name="confirm_appointment">Confirm Appointment</string>
+    <string name="confirm_booking">Confirm Booking</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="daily">Daily</string>
+    <string name="daily_health_tip">Daily Health Tip</string>
+    <string name="dermatology">Dermatology</string>
+    <string name="dob_hint">Date of Birth</string>
+    <string name="dosage_hint">Dosage (e.g., 500mg)</string>
+    <string name="email_hint">Email Address</string>
+    <string name="emergency_contact">Emergency Contact</string>
+    <string name="emergency_name_hint">Emergency Contact Name</string>
+    <string name="emergency_phone_hint">Emergency Contact Phone</string>
+    <string name="female">Female</string>
+    <string name="fill_all_fields">Please fill in all fields</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="frequency">Frequency</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="gender_hint">Select Gender</string>
+    <string name="general">General</string>
+    <string name="good_afternoon">Good Afternoon,</string>
+    <string name="good_evening">Good Evening,</string>
+    <string name="good_morning">Good Morning,</string>
+    <string name="have_account">Already have an account?</string>
+    <string name="history">History</string>
+    <string name="invalid_email">Please enter a valid email</string>
+    <string name="male">Male</string>
+    <string name="manage">Manage</string>
+    <string name="med_added">Medication reminder added!</string>
+    <string name="med_reminders">Med Reminders</string>
+    <string name="medication_name">Medication Name</string>
+    <string name="medication_reminders">Medication Reminders</string>
+    <string name="my_profile">My Profile</string>
+    <string name="nav_book">Book</string>
+    <string name="nav_history">History</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_meds">Meds</string>
+    <string name="nav_profile">Profile</string>
+    <string name="neurology">Neurology</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="no_medications">No medications added yet</string>
+    <string name="no_upcoming">No upcoming appointments</string>
+    <string name="notes_hint">Notes (e.g., Take with food)</string>
+    <string name="other">Other</string>
+    <string name="password_hint">Password</string>
+    <string name="passwords_mismatch">Passwords do not match</string>
+    <string name="pediatrics">Pediatrics</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="profile">Profile</string>
+    <string name="profile_saved">Profile saved successfully!</string>
+    <string name="reset_desc">Enter your email to receive a reset link</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="search_doctors">Search doctors, clinics…</string>
+    <string name="select_time">Please select a time slot</string>
+    <string name="select_time_slot">Select a Time Slot:</string>
+    <string name="send_reset_link">Send Reset Link</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_desc">Sign in to manage your appointments</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="signed_out">Signed out successfully</string>
+    <string name="signup_desc">Join MediLink for smarter healthcare</string>
+    <string name="slogan">Connecting You to Care, On Time.</string>
+    <string name="slots_available">%d slots</string>
+    <string name="splash_tagline">Digital Appointment &amp; Health Reminder App</string>
+    <string name="time_hint">Time</string>
+    <string name="todays_medications">Today\'s Medications</string>
+    <string name="twice_daily">Twice Daily</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="upcoming_appointments">Upcoming Appointments</string>
+    <string name="view_all">View All</string>
+    <string name="weekly">Weekly</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="welcome_toast">Welcome back!</string>
+    <style name="FilterChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">20dp</item>
+        <item name="chipBackgroundColor">@color/surface</item>
+        <item name="chipStrokeColor">@color/border</item>
+        <item name="chipStrokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="checkedIconVisible">false</item>
+    </style>
+    <style name="MediCard">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/surface</item>
+    </style>
+    <style name="MediInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="hintTextColor">@color/primary</item>
+    </style>
+    <style name="OutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeColor">@color/border</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+    <style name="PrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+    <style name="SectionTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="Theme.MediLink" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="Theme.MediLink.Splash" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_gradient</item>
+        <item name="android:statusBarColor">@color/splash_start</item>
+        <item name="android:navigationBarColor">@color/splash_end</item>
+    </style>
+</resources>

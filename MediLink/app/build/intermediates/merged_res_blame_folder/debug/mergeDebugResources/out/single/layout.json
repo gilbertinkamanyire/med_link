@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/dialog_book_appointment.xml",
+        "source": "com.medilink.app-main-41:/layout/dialog_book_appointment.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_profile.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_medication.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_medication.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_splash.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_admin_dashboard.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_admin_dashboard.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_booking.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_booking.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/item_appointment.xml",
+        "source": "com.medilink.app-main-41:/layout/item_appointment.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_main.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/item_doctor.xml",
+        "source": "com.medilink.app-main-41:/layout/item_doctor.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_login.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_scanner.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_scanner.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_history.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_history.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_doctor_dashboard.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_doctor_dashboard.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/item_medication.xml",
+        "source": "com.medilink.app-main-41:/layout/item_medication.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/activity_signup.xml",
+        "source": "com.medilink.app-main-41:/layout/activity_signup.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/dialog_add_medication.xml",
+        "source": "com.medilink.app-main-41:/layout/dialog_add_medication.xml"
+    },
+    {
+        "merged": "com.medilink.app-mergeDebugResources-3:/layout/item_user.xml",
+        "source": "com.medilink.app-main-41:/layout/item_user.xml"
+    }
+]

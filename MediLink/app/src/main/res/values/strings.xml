@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MediLink</string>
+    <string name="slogan">Connecting You to Care, On Time.</string>
+    <string name="splash_tagline">Digital Appointment &amp; Health Reminder App</string>
+
+    <!-- Auth -->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="sign_in_desc">Sign in to manage your appointments</string>
+    <string name="create_account">Create Account</string>
+    <string name="signup_desc">Join MediLink for smarter healthcare</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="have_account">Already have an account?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="reset_desc">Enter your email to receive a reset link</string>
+    <string name="send_reset_link">Send Reset Link</string>
+    <string name="back_to_sign_in">Back to Sign In</string>
+
+    <!-- Dashboard -->
+    <string name="good_morning">Good Morning,</string>
+    <string name="good_afternoon">Good Afternoon,</string>
+    <string name="good_evening">Good Evening,</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="med_reminders">Med Reminders</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="upcoming_appointments">Upcoming Appointments</string>
+    <string name="view_all">View All</string>
+    <string name="todays_medications">Today\'s Medications</string>
+    <string name="manage">Manage</string>
+    <string name="daily_health_tip">Daily Health Tip</string>
+    <string name="no_upcoming">No upcoming appointments</string>
+    <string name="no_medications">No medications added yet</string>
+
+    <!-- Booking -->
+    <string name="search_doctors">Search doctors, clinics…</string>
+    <string name="all">All</string>
+    <string name="general">General</string>
+    <string name="cardiology">Cardiology</string>
+    <string name="dermatology">Dermatology</string>
+    <string name="pediatrics">Pediatrics</string>
+    <string name="neurology">Neurology</string>
+    <string name="confirm_appointment">Confirm Appointment</string>
+    <string name="select_time_slot">Select a Time Slot:</string>
+    <string name="confirm_booking">Confirm Booking</string>
+    <string name="cancel">Cancel</string>
+    <string name="slots_available">%d slots</string>
+
+    <!-- History -->
+    <string name="appointment_history">Appointment History</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="completed">Completed</string>
+    <string name="cancelled">Cancelled</string>
+
+    <!-- Medication -->
+    <string name="medication_reminders">Medication Reminders</string>
+    <string name="add_medication">Add Medication</string>
+    <string name="medication_name">Medication Name</string>
+    <string name="dosage_hint">Dosage (e.g., 500mg)</string>
+    <string name="time_hint">Time</string>
+    <string name="frequency">Frequency</string>
+    <string name="notes_hint">Notes (e.g., Take with food)</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="daily">Daily</string>
+    <string name="twice_daily">Twice Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="as_needed">As Needed</string>
+
+    <!-- Profile -->
+    <string name="my_profile">My Profile</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="emergency_contact">Emergency Contact</string>
+    <string name="dob_hint">Date of Birth</string>
+    <string name="gender_hint">Select Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="emergency_name_hint">Emergency Contact Name</string>
+    <string name="emergency_phone_hint">Emergency Contact Phone</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="sign_out">Sign Out</string>
+
+    <!-- Bottom Nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_book">Book</string>
+    <string name="nav_meds">Meds</string>
+    <string name="nav_history">History</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Toasts -->
+    <string name="welcome_toast">Welcome back!</string>
+    <string name="account_created">Account created successfully!</string>
+    <string name="profile_saved">Profile saved successfully!</string>
+    <string name="booking_success">Appointment booked successfully!</string>
+    <string name="med_added">Medication reminder added!</string>
+    <string name="fill_all_fields">Please fill in all fields</string>
+    <string name="invalid_email">Please enter a valid email</string>
+    <string name="passwords_mismatch">Passwords do not match</string>
+    <string name="select_time">Please select a time slot</string>
+    <string name="signed_out">Signed out successfully</string>
+</resources>

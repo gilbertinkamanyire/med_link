@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors (Teal Blue) -->
+    <color name="primary">#008080</color>
+    <color name="primary_dark">#006666</color>
+    <color name="primary_light">#00B3B3</color>
+    <color name="primary_variant">#005F5F</color>
+
+    <!-- Secondary Colors (Light Blue) -->
+    <color name="secondary">#E0F7FA</color>
+    <color name="secondary_variant">#B2EBF2</color>
+
+    <!-- Accent (Soft Green) -->
+    <color name="accent">#4CAF50</color>
+    <color name="accent_light">#81C784</color>
+    <color name="accent_bg">#E8F5E9</color>
+
+    <!-- Background & Surface -->
+    <color name="background">#F5F9FA</color>
+    <color name="surface">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#616161</color>
+    <color name="text_muted">#9E9E9E</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Status -->
+    <color name="danger">#EF5350</color>
+    <color name="danger_light">#FFEBEE</color>
+    <color name="warning">#FF9800</color>
+    <color name="warning_light">#FFF3E0</color>
+    <color name="info">#2196F3</color>
+
+    <!-- Misc -->
+    <color name="border">#E0E0E0</color>
+    <color name="border_light">#F0F0F0</color>
+    <color name="star">#FFC107</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Doctor Avatar Colors -->
+    <color name="doctor_teal">#008080</color>
+    <color name="doctor_purple">#7E57C2</color>
+    <color name="doctor_orange">#FF7043</color>
+    <color name="doctor_green">#4CAF50</color>
+    <color name="doctor_red">#FF5722</color>
+    <color name="doctor_dark_teal">#009688</color>
+
+    <!-- Gradient placeholder -->
+    <color name="splash_start">#005F5F</color>
+    <color name="splash_end">#00B3B3</color>
+</resources>

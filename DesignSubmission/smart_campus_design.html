@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Campus Service - Design Documentation</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: #ffffff;
+            color: #333;
+        }
+        .page { 
+            page-break-after: always; 
+            padding: 40px; 
+            position: relative;
+            min-height: 100vh;
+        }
+        .page-title { 
+            font-size: 26px; 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            border-bottom: 3px solid #1a5f7a; 
+            padding-bottom: 10px; 
+            color: #1a5f7a;
+        }
+        
+        .mermaid { 
+            text-align: center; 
+            margin-top: 30px; 
+            background: #f4f8fb;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #d0deeb;
+        }
+
+        .wireframe-grid {
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            margin-top: 30px;
+            padding-left: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .screen {
+            width: 270px;
+            height: 540px;
+            border: 3px solid #222;
+            border-radius: 30px;
+            padding: 15px;
+            box-sizing: border-box;
+            position: relative;
+            background: #fdfdfd;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .screen::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 5px;
+            background: #ccc;
+            border-radius: 5px;
+        }
+        .screen-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            margin-top: 10px;
+            color: #444;
+        }
+        .element { 
+            background: #ecf0f1; 
+            border: 1px solid #bdc3c7; 
+            margin-bottom: 12px; 
+            border-radius: 6px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 13px; 
+            color: #555; 
+            text-align: center;
+        }
+        
+        .nav-bar { 
+            position: absolute; 
+            bottom: 15px; 
+            left: 15px; 
+            right: 15px; 
+            height: 45px; 
+            background: #eee; 
+            display: flex; 
+            justify-content: space-around; 
+            align-items: center; 
+            border-radius: 12px;
+        }
+        .nav-icon { width: 22px; height: 22px; background: #bbb; border-radius: 50%; }
+
+        .btn { height: 40px; background: #1a5f7a; color: white; border: none; font-weight: bold; letter-spacing: 0.5px;}
+        .input { height: 35px; background: white; border: 1px solid #ccc; justify-content: flex-start; padding-left: 10px; color: #888;}
+        .circle { width: 70px; height: 70px; border-radius: 50%; background: #e0e0e0; margin: 0 auto 15px; border: 2px solid #ccc;}
+        
+        .splash-logo { width: 110px; height: 110px; border-radius: 15px; margin: 160px auto 30px; background: #1a5f7a; color:white; font-size: 20px; display:flex; flex-direction: column; align-items:center; justify-content:center; box-shadow: 0 4px 10px rgba(26,95,122,0.3); font-weight: bold; text-align: center;}
+        .card { padding: 10px; background: white; border: 1px solid #ddd; margin-bottom: 12px; border-radius: 8px; text-align: left; font-size: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);}
+        .grid-2 { display: flex; gap: 10px; margin-bottom: 12px; }
+        .grid-2 .element { flex: 1; height: 70px; margin:0; flex-direction: column; gap: 5px; font-weight: bold;}
+
+        .report-section {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .report-section h3 {
+            color: #1a5f7a;
+            border-left: 4px solid #1a5f7a;
+            padding-left: 10px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER & INTRODUCTION -->
+<div class="page">
+    <div style="text-align: center; margin-top: 100px;">
+        <h1 style="color: #1a5f7a; font-size: 32px;">Smart Campus Service Mobile Application</h1>
+        <h2>Wireframe & User Flow Diagrams Report</h2>
+        <div style="margin-top: 50px; font-size: 18px;">
+            <p><strong>Course:</strong> Mobile Applications Programming (CNW 2201)</p>
+            <p><strong>Student:</strong> Tinka Gilbert</p>
+            <p><strong>Reg No:</strong> __________________</p>
+            <p><strong>Institution:</strong> Universal Technology and Management University (UTAMU)</p>
+        </div>
+    </div>
+    
+    <div class="report-section" style="margin-top: 80px;">
+        <h3>1. Introduction</h3>
+        <p>The application is aimed to simplify how students interact with university services through a mobile device. Instead of physically visiting different offices on campus, students can access announcements, submit service requests, and manage their personal profiles using the mobile application.</p>
+    </div>
+    <div class="footer">Tinka Gilbert | Reg No: ______ | Smart Campus Service Mobile Application</div>
+</div>
+
+<!-- PAGE 2: PROJECT SCOPE -->
+<div class="page">
+    <div class="page-title">02. Project Scope</div>
+    <div class="report-section">
+        <p>The Smart Campus Service Mobile Application is designed to provide a centralized digital platform where students can easily access important university services using their smartphones.</p>
+        
+        <h3>Objectives</h3>
+        <ul>
+            <li>To provide students with quick and convenient access to university announcements.</li>
+            <li>To enable students to submit service requests directly from their mobile phones.</li>
+            <li>To allow students to view and manage their personal profiles.</li>
+        </ul>
+        
+        <h3>Key Features</h3>
+        <ul>
+            <li><strong>User Authentication:</strong> Secure login and signup.</li>
+            <li><strong>Dashboard:</strong> Main hub for campus services.</li>
+            <li><strong>Announcements:</strong> Real-time university updates.</li>
+            <li><strong>Service Requests:</strong> Digital submission of reports and requests.</li>
+            <li><strong>Profile Management:</strong> User data control.</li>
+        </ul>
+    </div>
+    <div class="footer">Tinka Gilbert | Reg No: ______ | Smart Campus Service Mobile Application</div>
+</div>
+
+<!-- PAGE 3: USER FLOW -->
+<div class="page">
+    <div class="page-title">03. User Flow Diagram</div>
+    <div class="mermaid">
+    graph TD
+        A([Splash Screen]) --> B[Login Screen]
+        B --> C{Registered?}
+        C -- No --> D[Registration Screen] --> B
+        C -- Yes --> E[Dashboard]
+        
+        E --> F[Announcements] --> E
+        E --> G[Service Request] --> H[Confirmation] --> E
+        E --> I[Profile] --> E
+        
+        E --> J[Logout] --> B
+    </div>
+    <div class="footer">Tinka Gilbert | Reg No: ______ | Smart Campus Service Mobile Application</div>
+</div>
+
+<!-- PAGE 4: WIREFRAMES -->
+<div class="page">
+    <div class="page-title">04. Wireframe Diagrams</div>
+    <div class="wireframe-grid">
+        
+        <!-- Splash -->
+        <div class="screen">
+            <div class="screen-title">Splash Screen</div>
+            <div class="splash-logo">SMART<br>CAMPUS</div>
+            <div class="element" style="border:none; background:transparent; margin-top:20px;">[ Loading... ]</div>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="screen">
+            <div class="screen-title">Dashboard</div>
+            <div class="element" style="height: 40px; background: transparent; border:none; justify-content: flex-start; font-weight: bold; font-size: 16px;">Hi Tinka!</div>
+            
+            <div class="grid-2">
+                <div class="element btn" style="font-size: 11px;">📢 Announcements</div>
+                <div class="element btn" style="font-size: 11px;">🛠️ Service Request</div>
+            </div>
+            <div class="grid-2">
+                <div class="element btn" style="font-size: 11px;">👤 My Profile</div>
+                <div class="element btn" style="font-size: 11px; background:#888;">🚪 Logout</div>
+            </div>
+            
+            <div style="font-weight:bold; font-size: 12px; margin: 15px 0 5px;">Latest Announcement</div>
+            <div class="card">
+                <strong>Semester II Exams</strong><br>
+                <span style="font-size: 10px; color: #666;">The final exam timetable is now available for download.</span>
+            </div>
+        </div>
+
+        <!-- Service Request -->
+        <div class="screen">
+            <div class="screen-title">Service Request</div>
+            <div class="element input">Select Category [v]</div>
+            <div class="element input" style="height: 120px; align-items: flex-start; padding-top: 10px;">Describe the issue...</div>
+            <div class="element btn">SUBMIT REQUEST</div>
+            <div class="element" style="border:none; background:transparent; font-size: 11px;">Return to Dashboard</div>
+        </div>
+    </div>
+    <div class="footer">Tinka Gilbert | Reg No: ______ | Smart Campus Service Mobile Application</div>
+</div>
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+</script>
+</body>
+</html>

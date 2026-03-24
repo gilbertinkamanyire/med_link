@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MediLink Design Documentation</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: #ffffff;
+            color: #333;
+        }
+        .page { 
+            page-break-after: always; 
+            padding: 20px; 
+            position: relative;
+        }
+        .page-title { 
+            font-size: 26px; 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            border-bottom: 3px solid #008080; 
+            padding-bottom: 10px; 
+            color: #008080;
+        }
+        
+        .mermaid { 
+            text-align: center; 
+            margin-top: 30px; 
+            background: #f4fbfb;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #d0ebeb;
+        }
+
+        .wireframe-grid {
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            margin-top: 30px;
+            padding-left: 20px;
+        }
+        
+        .screen {
+            width: 270px;
+            height: 540px;
+            border: 3px solid #222;
+            border-radius: 30px;
+            padding: 15px;
+            box-sizing: border-box;
+            position: relative;
+            background: #fdfdfd;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .screen::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 5px;
+            background: #ccc;
+            border-radius: 5px;
+        }
+        .screen-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            margin-top: 10px;
+            color: #444;
+        }
+        .element { 
+            background: #ecf0f1; 
+            border: 1px solid #bdc3c7; 
+            margin-bottom: 12px; 
+            border-radius: 6px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 13px; 
+            color: #555; 
+            text-align: center;
+        }
+        
+        .nav-bar { 
+            position: absolute; 
+            bottom: 15px; 
+            left: 15px; 
+            right: 15px; 
+            height: 45px; 
+            background: #eee; 
+            display: flex; 
+            justify-content: space-around; 
+            align-items: center; 
+            border-radius: 12px;
+        }
+        .nav-icon { width: 22px; height: 22px; background: #bbb; border-radius: 50%; }
+
+        .btn { height: 40px; background: #008080; color: white; border: none; font-weight: bold; letter-spacing: 0.5px;}
+        .input { height: 35px; background: white; border: 1px solid #ccc; justify-content: flex-start; padding-left: 10px; color: #888;}
+        .circle { width: 70px; height: 70px; border-radius: 50%; background: #e0e0e0; margin: 0 auto 15px; border: 2px solid #ccc;}
+        
+        /* Specific Elements */
+        .splash-logo { width: 110px; height: 110px; border-radius: 50%; margin: 160px auto 30px; background: #008080; color:white; font-size: 20px; display:flex; align-items:center; justify-content:center; box-shadow: 0 4px 10px rgba(0,128,128,0.3);}
+        .card { padding: 10px; background: white; border: 1px solid #ddd; margin-bottom: 12px; border-radius: 8px; text-align: left; font-size: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);}
+        .grid-2 { display: flex; gap: 10px; margin-bottom: 12px; }
+        .grid-2 .element { flex: 1; height: 70px; margin:0; flex-direction: column; gap: 5px; font-weight: bold;}
+        .tab-bar { display: flex; gap: 5px; margin-bottom: 15px; }
+        .tab-bar .element { flex: 1; height: 30px; margin:0; font-size: 11px;}
+        .dialog-mock { position:absolute; bottom:20px; left:10px; right:10px; background:white; border: 1px solid #aaa; border-radius: 12px; padding:15px; z-index:10; box-shadow: 0 -5px 15px rgba(0,0,0,0.1);}
+
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: User Flow -->
+<div class="page">
+    <div class="page-title">01. User Flow Diagram</div>
+    <div class="mermaid">
+    graph TD
+        %% Define styling
+        classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
+        classDef decision fill:#fff3cd,stroke:#ffc107,stroke-width:2px;
+        classDef screen fill:#d1ecf1,stroke:#17a2b8,stroke-width:2px;
+        classDef endAction fill:#d4edda,stroke:#28a745,stroke-width:2px;
+
+        A([Launch App / Splash]):::screen --> B{Is Authenticated?}:::decision
+        B -- No --> C[Login Screen]:::screen
+        B -- Yes --> D((Dashboard / Home)):::screen
+        
+        C --> E{Has Account?}:::decision
+        E -- No --> F[Signup Screen]:::screen --> C
+        E -- Yes --> C
+        C -- Valid Credentials --> D
+        
+        D --> G[Booking Screen]:::screen
+        G --> H{Search / Filter Doctor}:::decision
+        H --> I[Select Time Slot]
+        I --> J[Confirm Appointment]:::endAction
+        J --> K[History Screen]:::screen
+        
+        D --> L[Medication Screen]:::screen
+        L --> M[Add Reminder Modal]
+        M --> L
+        L --> N[Mark Medicine as Taken]:::endAction
+        
+        D --> K
+        K --> O{Filter Status}:::decision
+        O -- Upcoming --> P[View Upcoming List]
+        O -- Completed --> Q[View Completed List]
+        
+        D --> R[Profile Screen]:::screen
+        R --> S[Edit Info]
+        S --> T[Save Profile]:::endAction --> R
+        R -- Logout --> C
+    </div>
+</div>
+
+<!-- PAGE 2: Wireframes Part 1 -->
+<div class="page">
+    <div class="page-title">02. Wireframe Diagrams (Onboarding & Core Dashboard)</div>
+    <div class="wireframe-grid">
+        
+        <!-- Splash -->
+        <div class="screen">
+            <div class="screen-title">Splash Screen</div>
+            <div class="splash-logo">MediLink</div>
+            <div class="element" style="border:none; background:transparent;">Loading experience...</div>
+        </div>
+
+        <!-- Login -->
+        <div class="screen">
+            <div class="screen-title">Login Screen</div>
+            <div style="height: 60px;"></div>
+            <div class="element input">Email Address</div>
+            <div class="element input">Password</div>
+            <div class="element btn">LOGIN</div>
+            <div class="element" style="border:none; background:transparent; margin-top: 15px; color:#008080;">Forgot Password?</div>
+            <div style="height: 30px;"></div>
+            <div class="element" style="border:none; background:transparent; font-weight:bold;">Don't have an account? Sign Up</div>
+        </div>
+
+        <!-- Signup -->
+        <div class="screen">
+            <div class="screen-title">Signup Screen</div>
+            <div style="height: 20px;"></div>
+            <div class="element input">Full Name</div>
+            <div class="element input">Email Address</div>
+            <div class="element input">Phone Number</div>
+            <div class="element input">Password</div>
+            <div class="element input">Confirm Password</div>
+            <div class="element btn">CREATE ACCOUNT</div>
+            <div class="element" style="border:none; background:transparent; margin-top: 15px; font-weight:bold;">Already have an account? Login</div>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="screen">
+            <div class="screen-title">Dashboard (Home)</div>
+            <div class="element" style="height: 45px; text-align: left; padding: 5px 10px; justify-content:flex-start; background: transparent; border:none; border-bottom:1px solid #eee;">
+                Hi John,<br><span style="font-weight:bold; font-size:16px; color:#008080;">Good Morning!</span>
+            </div>
+            
+            <div class="grid-2" style="margin-top:10px;">
+                <div class="element"><div class="circle" style="width:30px;height:30px;margin:0 0 5px;"></div>Book Appt</div>
+                <div class="element"><div class="circle" style="width:30px;height:30px;margin:0 0 5px;"></div>Meds</div>
+            </div>
+            <div class="grid-2">
+                <div class="element"><div class="circle" style="width:30px;height:30px;margin:0 0 5px;"></div>History</div>
+                <div class="element"><div class="circle" style="width:30px;height:30px;margin:0 0 5px;"></div>Profile</div>
+            </div>
+            
+            <div style="font-weight:bold; font-size: 13px; margin: 15px 0 5px; color:#333;">Upcoming Appointments</div>
+            <div class="card"><strong>Dr. Sarah</strong><br><span style="color:#777;">Cardio • Today, 10:30 AM</span></div>
+            
+            <div style="font-weight:bold; font-size: 13px; margin: 15px 0 5px; color:#333;">Today's Medications</div>
+            <div class="card" style="display:flex; justify-content:space-between;">
+                <span><strong>Aspirin</strong><br>1 Pill • 08:00 AM</span>
+                <input type="checkbox" checked>
+            </div>
+
+            <div class="nav-bar">
+                <div class="nav-icon" style="background:#008080;"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 3: Wireframes Part 2 -->
+<div class="page">
+    <div class="page-title">03. Wireframe Diagrams (Features & Profile)</div>
+    <div class="wireframe-grid">
+        
+        <!-- Booking -->
+        <div class="screen">
+            <div class="screen-title">Booking Screen</div>
+            <div class="element input" style="border-radius:20px;">🔍 Search doctors...</div>
+            <div class="tab-bar">
+                <div class="element" style="background:#008080; color:white; border-radius:15px;">All</div>
+                <div class="element" style="border-radius:15px;">Cardio</div>
+                <div class="element" style="border-radius:15px;">Dental</div>
+            </div>
+            <div class="card" style="display:flex; gap:10px;">
+                <div class="circle" style="width:40px;height:40px;margin:0;"></div>
+                <div><strong>Dr. Smith</strong><br>Cardio • City Clinic<br><span style="color:orange;">★ 4.8</span></div>
+            </div>
+            <div class="card" style="display:flex; gap:10px;">
+                <div class="circle" style="width:40px;height:40px;margin:0;"></div>
+                <div><strong>Dr. Jane</strong><br>Dental • Smile Care<br><span style="color:orange;">★ 4.9</span></div>
+            </div>
+            
+            <!-- Simulated Dialog overlay inside screen -->
+            <div class="dialog-mock">
+               <div style="font-weight:bold; margin-bottom:10px; font-size:14px;">Select Time - Dr. Smith</div>
+               <div class="grid-2">
+                 <div class="element" style="height:35px;">09:00 AM</div>
+                 <div class="element" style="height:35px; background:#008080; color:white;">10:30 AM</div>
+               </div>
+               <div class="grid-2">
+                 <div class="element" style="height:35px;">01:00 PM</div>
+                 <div class="element" style="height:35px;">03:00 PM</div>
+               </div>
+               <div class="element btn" style="margin:0; height:35px;">CONFIRM</div>
+            </div>
+        </div>
+
+        <!-- History -->
+        <div class="screen">
+            <div class="screen-title">Appointment History</div>
+            <div class="tab-bar">
+                <div class="element" style="background:#008080; color:white; border-bottom: 2px solid #005555;">Upcoming</div>
+                <div class="element">Completed</div>
+                <div class="element">Cancelled</div>
+            </div>
+            <div class="card" style="border-left: 4px solid #008080;">
+                <strong>Dr. Smith (Cardiology)</strong><br>
+                <div style="margin-top:5px; color:#555;">📅 Tomorrow, 10:30 AM</div>
+            </div>
+            <div class="card" style="border-left: 4px solid #008080;">
+                <strong>Dr. John (General)</strong><br>
+                <div style="margin-top:5px; color:#555;">📅 Mar 18, 02:00 PM</div>
+            </div>
+        </div>
+
+        <!-- Medication -->
+        <div class="screen">
+            <div class="screen-title">Medication Reminders</div>
+            <div class="element btn" style="border-radius:20px; width:80%; margin:0 auto 20px;">+ Add Medication</div>
+            
+            <div class="card" style="display:flex; align-items:center; padding:15px 10px;">
+                <div style="flex:1;">
+                    <strong>Aspirin</strong><br>
+                    <span style="color:#666;">1 Pill • Daily • 08:00 AM</span>
+                </div>
+                <input type="checkbox" checked style="width:20px; height:20px;">
+            </div>
+            
+            <div class="card" style="display:flex; align-items:center; padding:15px 10px;">
+                <div style="flex:1;">
+                    <strong>Vitamin C</strong><br>
+                    <span style="color:#666;">2 Pills • Weekly • 12:00 PM</span>
+                </div>
+                <input type="checkbox" style="width:20px; height:20px;">
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="screen">
+            <div class="screen-title">User Profile</div>
+            <div class="circle" style="width:80px; height:80px;"></div>
+            <div class="element" style="border:none; background:transparent; font-size:16px; font-weight:bold; margin-bottom: 5px;">John Doe</div>
+            <div class="element" style="border:none; background:transparent; margin-bottom: 20px;">johndoe@email.com</div>
+            
+            <div class="element input">Name: John Doe</div>
+            <div class="element input">Phone: +1 234 567 8900</div>
+            
+            <div style="font-weight:bold; font-size: 12px; margin: 15px 0 5px; color:#333;">Emergency Contact</div>
+            <div class="element input">Contact: Jane Doe</div>
+            <div class="element input">Phone: +1 098 765 4321</div>
+            
+            <div class="element btn" style="margin-top:20px;">SAVE CHANGES</div>
+            <div class="element btn" style="background:transparent; border: 2px solid #cc0000; color:#cc0000;">LOGOUT</div>
+        </div>
+
+    </div>
+</div>
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+</script>
+</body>
+</html>

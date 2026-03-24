@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLink Mobile Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #008080;
+            --bg-dark: #0f172a;
+            --text-light: #f1f5f9;
+            --phone-frame: #1e293b;
+            --phone-bezel: #020617;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 128, 128, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 179, 179, 0.2) 0%, transparent 40%);
+        }
+
+        header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        p.subtitle {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        /* --- Device Frame --- */
+        .phone-container {
+            position: relative;
+            perspective: 1200px;
+        }
+
+        .phone-frame {
+            position: relative;
+            width: 380px;
+            height: 780px;
+            background: var(--phone-frame);
+            border-radius: 55px;
+            padding: 12px;
+            box-shadow: 
+                0 0 0 2px #334155,
+                0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                inset 0 0 2px 2px rgba(255, 255, 255, 0.1);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .phone-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 44px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Notch / Dynamic Island */
+        .dynamic-island {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 30px;
+            background: var(--phone-bezel);
+            border-radius: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+
+        /* Screen Content */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- Buttons on Frame --- */
+        .side-btn {
+            position: absolute;
+            background: #0f172a;
+            width: 3px;
+            box-shadow: 0 0 2px rgba(255,255,255,0.1);
+        }
+        .btn-silent { top: 120px; left: -3px; height: 35px; border-radius: 2px 0 0 2px; }
+        .btn-vol-up { top: 180px; left: -3px; height: 60px; border-radius: 2px 0 0 2px; }
+        .btn-vol-down { top: 250px; left: -3px; height: 60px; border-radius: 2px 0 0 2px; }
+        .btn-power { top: 220px; right: -3px; height: 100px; border-radius: 0 2px 2px 0; }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotateY(0deg); }
+            50% { transform: translateY(-15px) rotateY(2deg); }
+            100% { transform: translateY(0px) rotateY(0deg); }
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            bottom: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-action {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-action:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-action.primary {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Reflection Effect */
+        .phone-frame::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            border-radius: 55px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @media (max-width: 500px) {
+            .phone-frame {
+                width: 320px;
+                height: 650px;
+            }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MediLink Live Preview</h1>
+        <p class="subtitle">Experience the future of healthcare on any device.</p>
+    </header>
+
+    <div class="phone-container">
+        <div class="phone-frame">
+            <div class="side-btn btn-silent"></div>
+            <div class="side-btn btn-vol-up"></div>
+            <div class="side-btn btn-vol-down"></div>
+            <div class="side-btn btn-power"></div>
+            
+            <div class="phone-inner">
+                <div class="dynamic-island"></div>
+                <iframe src="index.html" title="MediLink App Content"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn-action" onclick="document.querySelector('iframe').contentWindow.location.reload()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            Reload Interface
+        </button>
+        <button class="btn-action primary" onclick="window.open('index.html', '_blank')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Open Fullscreen
+        </button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.medilink.app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:6:5-65
+12-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:6:22-62
+13
+14    <uses-feature
+14-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:7:5-85
+15        android:name="android.hardware.camera"
+15-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:7:19-57
+16        android:required="false" />
+16-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:7:58-82
+17
+18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+18-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:8:5-80
+18-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:8:22-77
+19    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+19-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:9:5-76
+19-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:9:22-73
+20    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+20-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:10:5-77
+20-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:10:22-74
+21
+22    <permission
+22-->[androidx.core:core:1.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\73c870d790afa7d7ec2c3497162da36f\workspace\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+23        android:name="com.medilink.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+23-->[androidx.core:core:1.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\73c870d790afa7d7ec2c3497162da36f\workspace\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+24        android:protectionLevel="signature" />
+24-->[androidx.core:core:1.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\73c870d790afa7d7ec2c3497162da36f\workspace\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+25
+26    <uses-permission android:name="com.medilink.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+26-->[androidx.core:core:1.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\73c870d790afa7d7ec2c3497162da36f\workspace\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+26-->[androidx.core:core:1.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\73c870d790afa7d7ec2c3497162da36f\workspace\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+27    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+28    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+28-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\071797e86c57e970ceb86c1e01d6d174\workspace\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:25:5-79
+28-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\071797e86c57e970ceb86c1e01d6d174\workspace\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:25:22-76
+29
+30    <application
+30-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:12:5-81:19
+31        android:allowBackup="true"
+31-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:13:9-35
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\73c870d790afa7d7ec2c3497162da36f\workspace\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+33        android:debuggable="true"
+34        android:extractNativeLibs="false"
+35        android:icon="@drawable/ic_launcher"
+35-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:14:9-45
+36        android:label="@string/app_name"
+36-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:15:9-41
+37        android:roundIcon="@drawable/ic_launcher"
+37-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:16:9-50
+38        android:supportsRtl="true"
+38-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:17:9-35
+39        android:theme="@style/Theme.MediLink"
+39-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:18:9-46
+40        android:usesCleartextTraffic="true" >
+40-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:19:9-44
+41
+42        <!-- Splash Screen -->
+43        <activity
+43-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:23:9-31:20
+44            android:name="com.medilink.app.activities.SplashActivity"
+44-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:24:13-54
+45            android:exported="true"
+45-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:25:13-36
+46            android:theme="@style/Theme.MediLink.Splash" >
+46-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:26:13-57
+47            <intent-filter>
+47-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:27:13-30:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:28:17-69
+48-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:28:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:29:17-77
+50-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:29:27-74
+51            </intent-filter>
+52        </activity>
+53
+54        <!-- Login / Signup -->
+55        <activity
+55-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:34:9-36:40
+56            android:name="com.medilink.app.activities.LoginActivity"
+56-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:35:13-53
+57            android:exported="false" />
+57-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:36:13-37
+58        <activity
+58-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:38:9-40:40
+59            android:name="com.medilink.app.activities.SignupActivity"
+59-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:39:13-54
+60            android:exported="false" />
+60-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:40:13-37
+61
+62        <!-- Main Dashboard with Bottom Navigation -->
+63        <activity
+63-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:43:9-45:40
+64            android:name="com.medilink.app.activities.MainActivity"
+64-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:44:13-52
+65            android:exported="false" />
+65-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:45:13-37
+66
+67        <!-- Appointment Booking -->
+68        <activity
+68-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:48:9-50:40
+69            android:name="com.medilink.app.activities.BookingActivity"
+69-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:49:13-55
+70            android:exported="false" />
+70-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:50:13-37
+71
+72        <!-- Appointment History -->
+73        <activity
+73-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:53:9-55:52
+74            android:name="com.medilink.app.activities.ScannerActivity"
+74-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:54:13-55
+75            android:screenOrientation="portrait" />
+75-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:55:13-49
+76        <activity
+76-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:57:9-59:40
+77            android:name="com.medilink.app.activities.HistoryActivity"
+77-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:58:13-55
+78            android:exported="false" />
+78-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:59:13-37
+79
+80        <!-- Medication Reminders -->
+81        <activity
+81-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:62:9-64:40
+82            android:name="com.medilink.app.activities.MedicationActivity"
+82-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:63:13-58
+83            android:exported="false" />
+83-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:64:13-37
+84
+85        <!-- Profile -->
+86        <activity
+86-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:67:9-69:40
+87            android:name="com.medilink.app.activities.ProfileActivity"
+87-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:68:13-55
+88            android:exported="false" />
+88-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:69:13-37
+89
+90        <!-- Admin and Doctor Dashboards -->
+91        <activity
+91-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:72:9-75:52
+92            android:name="com.medilink.app.activities.AdminDashboardActivity"
+92-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:73:13-62
+93            android:exported="false"
+93-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:74:13-37
+94            android:screenOrientation="portrait" />
+94-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:75:13-49
+95        <activity
+95-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:77:9-80:52
+96            android:name="com.medilink.app.activities.DoctorDashboardActivity"
+96-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:78:13-63
+97            android:exported="false"
+97-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:79:13-37
+98            android:screenOrientation="portrait" />
+98-->C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\src\main\AndroidManifest.xml:80:13-49
+99
+100        <service
+100-->[androidx.camera:camera-camera2:1.3.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\348ce1e3801922ab9f4c496280be8474\workspace\transformed\jetified-camera-camera2-1.3.1\AndroidManifest.xml:24:9-33:19
+101            android:name="androidx.camera.core.impl.MetadataHolderService"
+101-->[androidx.camera:camera-camera2:1.3.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\348ce1e3801922ab9f4c496280be8474\workspace\transformed\jetified-camera-camera2-1.3.1\AndroidManifest.xml:25:13-75
+102            android:enabled="false"
+102-->[androidx.camera:camera-camera2:1.3.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\348ce1e3801922ab9f4c496280be8474\workspace\transformed\jetified-camera-camera2-1.3.1\AndroidManifest.xml:26:13-36
+103            android:exported="false" >
+103-->[androidx.camera:camera-camera2:1.3.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\348ce1e3801922ab9f4c496280be8474\workspace\transformed\jetified-camera-camera2-1.3.1\AndroidManifest.xml:27:13-37
+104            <meta-data
+104-->[androidx.camera:camera-camera2:1.3.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\348ce1e3801922ab9f4c496280be8474\workspace\transformed\jetified-camera-camera2-1.3.1\AndroidManifest.xml:30:13-32:89
+105                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+105-->[androidx.camera:camera-camera2:1.3.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\348ce1e3801922ab9f4c496280be8474\workspace\transformed\jetified-camera-camera2-1.3.1\AndroidManifest.xml:31:17-103
+106                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+106-->[androidx.camera:camera-camera2:1.3.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\348ce1e3801922ab9f4c496280be8474\workspace\transformed\jetified-camera-camera2-1.3.1\AndroidManifest.xml:32:17-86
+107        </service>
+108
+109        <provider
+109-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\919cc4b4f4ce63cee6ff8b9393149a89\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+110            android:name="androidx.startup.InitializationProvider"
+110-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\919cc4b4f4ce63cee6ff8b9393149a89\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+111            android:authorities="com.medilink.app.androidx-startup"
+111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\919cc4b4f4ce63cee6ff8b9393149a89\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+112            android:exported="false" >
+112-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\919cc4b4f4ce63cee6ff8b9393149a89\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+113            <meta-data
+113-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\919cc4b4f4ce63cee6ff8b9393149a89\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+114                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+114-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\919cc4b4f4ce63cee6ff8b9393149a89\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+115                android:value="androidx.startup" />
+115-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\919cc4b4f4ce63cee6ff8b9393149a89\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+116            <meta-data
+116-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\3a1ac2f5517373b2a23424d5e28c05fd\workspace\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+117                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+117-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\3a1ac2f5517373b2a23424d5e28c05fd\workspace\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+118                android:value="androidx.startup" />
+118-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\3a1ac2f5517373b2a23424d5e28c05fd\workspace\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+119            <meta-data
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+120                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+121                android:value="androidx.startup" />
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+122        </provider>
+123
+124        <service
+124-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c1446160375a5d17e4c370c8ea3450ed\workspace\transformed\jetified-play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:9:9-15:19
+125            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+125-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c1446160375a5d17e4c370c8ea3450ed\workspace\transformed\jetified-play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:10:13-91
+126            android:directBootAware="true"
+126-->[com.google.mlkit:common:18.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9dfbbad637ffd7ec5ef89a97bf941ba8\workspace\transformed\jetified-common-18.9.0\AndroidManifest.xml:17:13-43
+127            android:exported="false" >
+127-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c1446160375a5d17e4c370c8ea3450ed\workspace\transformed\jetified-play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:11:13-37
+128            <meta-data
+128-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c1446160375a5d17e4c370c8ea3450ed\workspace\transformed\jetified-play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:12:13-14:85
+129                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+129-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c1446160375a5d17e4c370c8ea3450ed\workspace\transformed\jetified-play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:13:17-120
+130                android:value="com.google.firebase.components.ComponentRegistrar" />
+130-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c1446160375a5d17e4c370c8ea3450ed\workspace\transformed\jetified-play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:14:17-82
+131            <meta-data
+131-->[com.google.mlkit:vision-common:17.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\070bf7508e38c5de240ff69835749a5d\workspace\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:12:13-14:85
+132                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+132-->[com.google.mlkit:vision-common:17.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\070bf7508e38c5de240ff69835749a5d\workspace\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:13:17-124
+133                android:value="com.google.firebase.components.ComponentRegistrar" />
+133-->[com.google.mlkit:vision-common:17.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\070bf7508e38c5de240ff69835749a5d\workspace\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:14:17-82
+134            <meta-data
+134-->[com.google.mlkit:common:18.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9dfbbad637ffd7ec5ef89a97bf941ba8\workspace\transformed\jetified-common-18.9.0\AndroidManifest.xml:20:13-22:85
+135                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+135-->[com.google.mlkit:common:18.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9dfbbad637ffd7ec5ef89a97bf941ba8\workspace\transformed\jetified-common-18.9.0\AndroidManifest.xml:21:17-120
+136                android:value="com.google.firebase.components.ComponentRegistrar" />
+136-->[com.google.mlkit:common:18.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9dfbbad637ffd7ec5ef89a97bf941ba8\workspace\transformed\jetified-common-18.9.0\AndroidManifest.xml:22:17-82
+137        </service>
+138
+139        <provider
+139-->[com.google.mlkit:common:18.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9dfbbad637ffd7ec5ef89a97bf941ba8\workspace\transformed\jetified-common-18.9.0\AndroidManifest.xml:9:9-13:38
+140            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+140-->[com.google.mlkit:common:18.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9dfbbad637ffd7ec5ef89a97bf941ba8\workspace\transformed\jetified-common-18.9.0\AndroidManifest.xml:10:13-78
+141            android:authorities="com.medilink.app.mlkitinitprovider"
+141-->[com.google.mlkit:common:18.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9dfbbad637ffd7ec5ef89a97bf941ba8\workspace\transformed\jetified-common-18.9.0\AndroidManifest.xml:11:13-69
+142            android:exported="false"
+142-->[com.google.mlkit:common:18.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9dfbbad637ffd7ec5ef89a97bf941ba8\workspace\transformed\jetified-common-18.9.0\AndroidManifest.xml:12:13-37
+143            android:initOrder="99" />
+143-->[com.google.mlkit:common:18.9.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9dfbbad637ffd7ec5ef89a97bf941ba8\workspace\transformed\jetified-common-18.9.0\AndroidManifest.xml:13:13-35
+144
+145        <activity
+145-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c64c726990df583e26a055399fbf02bc\workspace\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+146            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+146-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c64c726990df583e26a055399fbf02bc\workspace\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+147            android:exported="false"
+147-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c64c726990df583e26a055399fbf02bc\workspace\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+148            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+148-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\c64c726990df583e26a055399fbf02bc\workspace\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+149
+150        <meta-data
+150-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\2777953467e8b1f11da4258ab4f6a766\workspace\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+151            android:name="com.google.android.gms.version"
+151-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\2777953467e8b1f11da4258ab4f6a766\workspace\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+152            android:value="@integer/google_play_services_version" />
+152-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\2777953467e8b1f11da4258ab4f6a766\workspace\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+153
+154        <receiver
+154-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+155            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+155-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+156            android:directBootAware="false"
+156-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+157            android:enabled="true"
+157-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+158            android:exported="true"
+158-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+159            android:permission="android.permission.DUMP" >
+159-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+160            <intent-filter>
+160-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+161                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+162            </intent-filter>
+163            <intent-filter>
+163-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+164                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+165            </intent-filter>
+166            <intent-filter>
+166-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+167                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+167-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+167-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+168            </intent-filter>
+169            <intent-filter>
+169-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+170                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\31e1be111f8a26f6a58fbcf334c7a322\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+171            </intent-filter>
+172        </receiver>
+173
+174        <service
+174-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\071797e86c57e970ceb86c1e01d6d174\workspace\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+175            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+175-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\071797e86c57e970ceb86c1e01d6d174\workspace\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+176            android:exported="false" >
+176-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\071797e86c57e970ceb86c1e01d6d174\workspace\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+177            <meta-data
+177-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\071797e86c57e970ceb86c1e01d6d174\workspace\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+178                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+178-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\071797e86c57e970ceb86c1e01d6d174\workspace\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+179                android:value="cct" />
+179-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\071797e86c57e970ceb86c1e01d6d174\workspace\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+180        </service>
+181        <service
+181-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9623d6b0ef7a36fa6f8350709c1a962c\workspace\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:26:9-30:19
+182            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+182-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9623d6b0ef7a36fa6f8350709c1a962c\workspace\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:27:13-117
+183            android:exported="false"
+183-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9623d6b0ef7a36fa6f8350709c1a962c\workspace\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:28:13-37
+184            android:permission="android.permission.BIND_JOB_SERVICE" >
+184-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9623d6b0ef7a36fa6f8350709c1a962c\workspace\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:29:13-69
+185        </service>
+186
+187        <receiver
+187-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9623d6b0ef7a36fa6f8350709c1a962c\workspace\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:32:9-34:40
+188            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+188-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9623d6b0ef7a36fa6f8350709c1a962c\workspace\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:33:13-132
+189            android:exported="false" />
+189-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\MATRIXCOMPUTER\Desktop\App\MediLink\app\build\outputs\apk\debug\caches\9.2.1\transforms\9623d6b0ef7a36fa6f8350709c1a962c\workspace\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:34:13-37
+190    </application>
+191
+192</manifest>

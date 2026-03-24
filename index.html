@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MediLink – Digital Appointment & Health Reminder App. Book medical appointments, receive automated reminders, and manage medication schedules.">
+  <title>MediLink – Connecting You to Care, On Time</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== SPLASH SCREEN ===== -->
+  <div id="splash-screen" class="screen splash-screen active">
+    <div class="splash-content">
+      <div class="splash-logo-container">
+        <div class="splash-icon-ring">
+          <span class="material-icons-outlined splash-icon">local_hospital</span>
+        </div>
+        <h1 class="splash-title">Medi<span>Link</span></h1>
+      </div>
+      <p class="splash-slogan">Healthcare, Reimagined.</p>
+      <div class="splash-loader">
+        <div class="splash-loader-bar"></div>
+      </div>
+    </div>
+    <p class="splash-footer">Connecting You to Care, On Time.</p>
+  </div>
+
+  <!-- ===== AUTH SCREEN ===== -->
+  <div id="auth-screen" class="screen auth-screen">
+    <div class="auth-container">
+      <div class="auth-header">
+        <div class="auth-logo">
+          <span class="material-icons-outlined">local_hospital</span>
+          <span class="auth-logo-text">MediLink</span>
+        </div>
+        <p class="auth-subtitle">Your Health, Our Priority</p>
+      </div>
+
+      <!-- Login Form -->
+      <div id="login-form" class="auth-form active">
+        <h2>Welcome Back</h2>
+        <p class="auth-desc">Sign in to manage your appointments</p>
+        <div class="input-group">
+          <span class="material-icons-outlined input-icon">email</span>
+          <input type="email" id="login-email" placeholder="Email Address" autocomplete="email">
+        </div>
+        <div class="input-group">
+          <span class="material-icons-outlined input-icon">lock</span>
+          <input type="password" id="login-password" placeholder="Password" autocomplete="current-password">
+          <span class="material-icons-outlined input-toggle-password" onclick="togglePassword('login-password', this)">visibility_off</span>
+        </div>
+        <a href="#" class="forgot-link" onclick="showForgotPassword()">Forgot Password?</a>
+        <button class="btn btn-primary" id="login-btn" onclick="handleLogin()">Sign In</button>
+        <p class="auth-switch">Don't have an account? <a href="#" onclick="toggleAuthForm('signup')">Create Account</a></p>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup-form" class="auth-form">
+        <h2>Create Account</h2>
+        <p class="auth-desc">Join MediLink for smarter healthcare</p>
+        <div class="input-group">
+          <span class="material-icons-outlined input-icon">person</span>
+          <input type="text" id="signup-name" placeholder="Full Name" autocomplete="name">
+        </div>
+        <div class="input-group">
+          <span class="material-icons-outlined input-icon">email</span>
+          <input type="email" id="signup-email" placeholder="Email Address" autocomplete="email">
+        </div>
+        <div class="input-group">
+          <span class="material-icons-outlined input-icon">phone</span>
+          <input type="tel" id="signup-phone" placeholder="Phone Number" autocomplete="tel">
+        </div>
+        <div class="input-group">
+          <span class="material-icons-outlined input-icon">lock</span>
+          <input type="password" id="signup-password" placeholder="Password" autocomplete="new-password">
+          <span class="material-icons-outlined input-toggle-password" onclick="togglePassword('signup-password', this)">visibility_off</span>
+        </div>
+        <div class="input-group">
+          <span class="material-icons-outlined input-icon">lock</span>
+          <input type="password" id="signup-confirm-password" placeholder="Confirm Password" autocomplete="new-password">
+        </div>
+        <button class="btn btn-primary" id="signup-btn" onclick="handleSignup()">Create Account</button>
+        <p class="auth-switch">Already have an account? <a href="#" onclick="toggleAuthForm('login')">Sign In</a></p>
+      </div>
+
+      <!-- Forgot Password Form -->
+      <div id="forgot-form" class="auth-form">
+        <h2>Reset Password</h2>
+        <p class="auth-desc">Enter your email to receive a reset link</p>
+        <div class="input-group">
+          <span class="material-icons-outlined input-icon">email</span>
+          <input type="email" id="forgot-email" placeholder="Email Address">
+        </div>
+        <button class="btn btn-primary" onclick="handleForgotPassword()">Send Reset Link</button>
+        <p class="auth-switch"><a href="#" onclick="toggleAuthForm('login')">← Back to Sign In</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN APP ===== -->
+  <div id="app-screen" class="screen app-screen">
+    
+    <!-- Top App Bar -->
+    <header class="app-header">
+      <div class="header-left">
+        <span class="material-icons-outlined header-logo-icon">local_hospital</span>
+        <span class="header-title">MediLink</span>
+      </div>
+      <div class="header-right">
+        <div class="notification-bell" onclick="toggleNotifications()">
+          <span class="material-icons-outlined">notifications</span>
+          <span class="notification-badge" id="notif-badge">3</span>
+        </div>
+        <div class="header-info-icon" onclick="navigateTo('about')">
+          <span class="material-icons-outlined">info</span>
+        </div>
+        <div class="header-avatar" onclick="navigateTo('profile')">
+          <span class="material-icons-outlined">account_circle</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notification-panel">
+      <div class="notif-header">
+        <h3>Notifications</h3>
+        <a href="#" onclick="clearNotifications()">Clear All</a>
+      </div>
+      <div class="notif-list" id="notif-list">
+        <!-- Notifications rendered by JS -->
+      </div>
+    </div>
+
+    <!-- App Content Area -->
+    <main class="app-content">
+
+      <!-- Dashboard Page -->
+      <section id="page-dashboard" class="page active">
+        <div class="dashboard-greeting">
+          <h1 id="greeting-text">Good Morning,</h1>
+          <p id="user-name-display">User</p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+          <div class="quick-action-card" onclick="navigateTo('booking')">
+            <div class="qa-icon-wrap" style="background: linear-gradient(135deg, #008080, #00b3b3);">
+              <span class="material-icons-outlined">calendar_month</span>
+            </div>
+            <span>Book Appointment</span>
+          </div>
+          <div class="quick-action-card" onclick="navigateTo('reminders')">
+            <div class="qa-icon-wrap" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
+              <span class="material-icons-outlined">medication</span>
+            </div>
+            <span>Med Reminders</span>
+          </div>
+          <div class="quick-action-card" onclick="navigateTo('history')">
+            <div class="qa-icon-wrap" style="background: linear-gradient(135deg, #FF7043, #FF8A65);">
+              <span class="material-icons-outlined">history</span>
+            </div>
+            <span>History</span>
+          </div>
+          <div class="quick-action-card" onclick="navigateTo('profile')">
+            <div class="qa-icon-wrap" style="background: linear-gradient(135deg, #7E57C2, #B39DDB);">
+              <span class="material-icons-outlined">person</span>
+            </div>
+            <span>Profile</span>
+          </div>
+        </div>
+
+        <!-- Upcoming Appointments -->
+        <div class="section-block">
+          <div class="section-header">
+            <h2>Upcoming Appointments</h2>
+            <a href="#" onclick="navigateTo('history')">View All</a>
+          </div>
+          <div id="upcoming-appointments" class="appointment-cards">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Today's Medication -->
+        <div class="section-block">
+          <div class="section-header">
+            <h2>Today's Medications</h2>
+            <a href="#" onclick="navigateTo('reminders')">Manage</a>
+          </div>
+          <div id="todays-meds" class="med-list">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Health Tip -->
+        <div class="health-tip-card">
+          <span class="material-icons-outlined tip-icon">tips_and_updates</span>
+          <div>
+            <h3>Daily Health Tip</h3>
+            <p id="health-tip-text">Stay hydrated! Drinking at least 8 glasses of water daily helps maintain energy levels and supports your immune system.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Appointment Booking Page -->
+      <section id="page-booking" class="page">
+        <div class="page-top-bar">
+          <button class="back-btn" onclick="navigateTo('dashboard')">
+            <span class="material-icons-outlined">arrow_back</span>
+          </button>
+          <h2>Book Appointment</h2>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <span class="material-icons-outlined">search</span>
+          <input type="text" id="doctor-search" placeholder="Search doctors, clinics..." oninput="filterDoctors()">
+        </div>
+
+        <!-- Specialty Filter -->
+        <div class="specialty-filters" id="specialty-filters">
+          <button class="filter-chip active" onclick="filterBySpecialty('all', this)">All</button>
+          <button class="filter-chip" onclick="filterBySpecialty('general', this)">General</button>
+          <button class="filter-chip" onclick="filterBySpecialty('cardiology', this)">Cardiology</button>
+          <button class="filter-chip" onclick="filterBySpecialty('dermatology', this)">Dermatology</button>
+          <button class="filter-chip" onclick="filterBySpecialty('pediatrics', this)">Pediatrics</button>
+          <button class="filter-chip" onclick="filterBySpecialty('neurology', this)">Neurology</button>
+        </div>
+
+        <!-- Doctor List -->
+        <div id="doctor-list" class="doctor-list">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Booking Modal -->
+        <div class="modal-overlay" id="booking-modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Confirm Appointment</h3>
+              <button class="modal-close" onclick="closeBookingModal()">
+                <span class="material-icons-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body" id="booking-modal-body">
+              <!-- Filled by JS -->
+            </div>
+            <div class="modal-actions">
+              <button class="btn btn-outline" onclick="closeBookingModal()">Cancel</button>
+              <button class="btn btn-primary" onclick="confirmBooking()">Confirm Booking</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Appointment History Page -->
+      <section id="page-history" class="page">
+        <div class="page-top-bar">
+          <button class="back-btn" onclick="navigateTo('dashboard')">
+            <span class="material-icons-outlined">arrow_back</span>
+          </button>
+          <h2>Appointment History</h2>
+        </div>
+
+        <div class="history-tabs">
+          <button class="tab-btn active" onclick="filterHistory('upcoming', this)">Upcoming</button>
+          <button class="tab-btn" onclick="filterHistory('completed', this)">Completed</button>
+          <button class="tab-btn" onclick="filterHistory('cancelled', this)">Cancelled</button>
+        </div>
+
+        <div id="history-list" class="history-list">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <!-- Medication Reminders Page -->
+      <section id="page-reminders" class="page">
+        <div class="page-top-bar">
+          <button class="back-btn" onclick="navigateTo('dashboard')">
+            <span class="material-icons-outlined">arrow_back</span>
+          </button>
+          <h2>Medication Reminders</h2>
+        </div>
+
+        <button class="btn btn-primary add-med-btn" onclick="openAddMedModal()">
+          <span class="material-icons-outlined">add</span> Add Medication
+        </button>
+
+        <div id="medication-list" class="medication-list">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Add Medication Modal -->
+        <div class="modal-overlay" id="add-med-modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Add Medication</h3>
+              <button class="modal-close" onclick="closeAddMedModal()">
+                <span class="material-icons-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group">
+                <span class="material-icons-outlined input-icon">medication</span>
+                <input type="text" id="med-name" placeholder="Medication Name">
+              </div>
+              <div class="input-group">
+                <span class="material-icons-outlined input-icon">dosage</span>
+                <input type="text" id="med-dosage" placeholder="Dosage (e.g., 500mg)">
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <span class="material-icons-outlined input-icon">schedule</span>
+                  <input type="time" id="med-time">
+                </div>
+                <div class="input-group">
+                  <span class="material-icons-outlined input-icon">repeat</span>
+                  <select id="med-frequency">
+                    <option value="daily">Daily</option>
+                    <option value="twice">Twice Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="as-needed">As Needed</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-group">
+                <span class="material-icons-outlined input-icon">notes</span>
+                <input type="text" id="med-notes" placeholder="Notes (e.g., Take with food)">
+              </div>
+            </div>
+            <div class="modal-actions">
+              <button class="btn btn-outline" onclick="closeAddMedModal()">Cancel</button>
+              <button class="btn btn-primary" onclick="addMedication()">Add Reminder</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profile Page -->
+      <section id="page-profile" class="page">
+        <div class="page-top-bar">
+          <button class="back-btn" onclick="navigateTo('dashboard')">
+            <span class="material-icons-outlined">arrow_back</span>
+          </button>
+          <h2>My Profile</h2>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-avatar-large">
+            <span class="material-icons-outlined">account_circle</span>
+          </div>
+          <h3 id="profile-name">User Name</h3>
+          <p id="profile-email">user@email.com</p>
+        </div>
+
+        <div class="profile-form">
+          <h3 class="profile-section-title">Personal Information</h3>
+          <div class="input-group">
+            <span class="material-icons-outlined input-icon">person</span>
+            <input type="text" id="profile-fullname" placeholder="Full Name">
+          </div>
+          <div class="input-group">
+            <span class="material-icons-outlined input-icon">phone</span>
+            <input type="tel" id="profile-phone" placeholder="Phone Number">
+          </div>
+          <div class="input-group">
+            <span class="material-icons-outlined input-icon">cake</span>
+            <input type="date" id="profile-dob" placeholder="Date of Birth">
+          </div>
+          <div class="input-group">
+            <span class="material-icons-outlined input-icon">wc</span>
+            <select id="profile-gender">
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <h3 class="profile-section-title">Emergency Contact</h3>
+          <div class="input-group">
+            <span class="material-icons-outlined input-icon">contact_emergency</span>
+            <input type="text" id="emergency-name" placeholder="Emergency Contact Name">
+          </div>
+          <div class="input-group">
+            <span class="material-icons-outlined input-icon">phone_in_talk</span>
+            <input type="tel" id="emergency-phone" placeholder="Emergency Contact Phone">
+          </div>
+
+          <button class="btn btn-primary" onclick="saveProfile()" style="margin-top: 16px;">Save Changes</button>
+        </div>
+
+        <div class="profile-actions">
+          <button class="btn btn-outline" onclick="navigateTo('about')">
+            <span class="material-icons-outlined">info</span> About MediLink
+          </button>
+          <button class="btn btn-outline btn-danger" onclick="handleLogout()">
+            <span class="material-icons-outlined">logout</span> Sign Out
+          </button>
+        </div>
+      </section>
+
+      <!-- About Page -->
+      <section id="page-about" class="page">
+        <div class="page-top-bar">
+          <button class="back-btn" onclick="navigateTo('dashboard')">
+            <span class="material-icons-outlined">arrow_back</span>
+          </button>
+          <h2>About MediLink</h2>
+        </div>
+
+        <div class="about-content">
+          <div class="about-logo">
+            <div class="splash-icon-ring" style="width: 80px; height: 80px;">
+              <span class="material-icons-outlined" style="font-size: 40px;">local_hospital</span>
+            </div>
+            <h3>MediLink</h3>
+            <p class="tagline">Connecting You to Care, On Time.</p>
+          </div>
+
+          <div class="about-section">
+            <h4>Our Mission</h4>
+            <p>MediLink is designed to simplify healthcare management for everyone. We believe that managing your health should be effortless and accessible.</p>
+          </div>
+
+          <div class="about-section">
+            <h4>Key Features</h4>
+            <ul class="about-features">
+              <li>
+                <span class="material-icons-outlined">calendar_today</span>
+                <div>
+                  <strong>Book Appointments</strong>
+                  <p>Find doctors and book appointments in seconds.</p>
+                </div>
+              </li>
+              <li>
+                <span class="material-icons-outlined">notifications_active</span>
+                <div>
+                  <strong>Health Reminders</strong>
+                  <p>Never miss a dose with our smart medication alerts.</p>
+                </div>
+              </li>
+              <li>
+                <span class="material-icons-outlined">history_edu</span>
+                <div>
+                  <strong>Medical History</strong>
+                  <p>Keep track of all your past and upcoming medical visits.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-section">
+            <h4>Developed for UTAMU</h4>
+            <p>This application is a part of a mobile application development project for UTAMU. It demonstrates the integration of modern web technologies to solve real-world healthcare challenges.</p>
+          </div>
+
+          <div class="about-footer">
+            <p>Version 1.0.0</p>
+            <p>&copy; 2026 MediLink Team. All Rights Reserved.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" id="nav-dashboard" onclick="navigateTo('dashboard')">
+        <span class="material-icons-outlined">dashboard</span>
+        <span>Home</span>
+      </button>
+      <button class="nav-item" id="nav-booking" onclick="navigateTo('booking')">
+        <span class="material-icons-outlined">calendar_month</span>
+        <span>Book</span>
+      </button>
+      <button class="nav-item" id="nav-reminders" onclick="navigateTo('reminders')">
+        <span class="material-icons-outlined">medication</span>
+        <span>Meds</span>
+      </button>
+      <button class="nav-item" id="nav-history" onclick="navigateTo('history')">
+        <span class="material-icons-outlined">history</span>
+        <span>History</span>
+      </button>
+      <button class="nav-item" id="nav-profile" onclick="navigateTo('profile')">
+        <span class="material-icons-outlined">person</span>
+        <span>Profile</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="material-icons-outlined toast-icon" id="toast-icon">check_circle</span>
+    <span id="toast-message">Success!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLink | Digital Health Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Auth Section -->
+        <div id="auth-screen" class="screen">
+            <div class="auth-container">
+                <div class="brand">
+                    <div class="logo-icon">M</div>
+                    <h1>MediLink</h1>
+                    <p>Your Health, Simplified.</p>
+                </div>
+                
+                <div id="login-form" class="auth-card">
+                    <h2>Welcome Back</h2>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="login-email" placeholder="name@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="login-password" placeholder="••••••••">
+                    </div>
+                    <button class="btn-primary" onclick="handleLogin()">Sign In</button>
+                    <p class="toggle-text">New to MediLink? <a href="#" onclick="toggleAuth()">Create Account</a></p>
+                    
+                    <div class="demo-acc">
+                        <p><strong>Admin:</strong> admin@medilink.com / admin</p>
+                    </div>
+                </div>
+
+                <div id="signup-form" class="auth-card hidden">
+                    <h2>Create Account</h2>
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" id="reg-name" placeholder="John Doe">
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="reg-email" placeholder="john@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label>I am a:</label>
+                        <div class="role-selector">
+                            <label><input type="radio" name="role" value="patient" checked> Patient</label>
+                            <label><input type="radio" name="role" value="doctor"> Doctor</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="reg-password" placeholder="••••••••">
+                    </div>
+                    <button class="btn-primary" onclick="handleRegister()">Register</button>
+                    <p class="toggle-text">Already have an account? <a href="#" onclick="toggleAuth()">Login</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Section -->
+        <div id="main-screen" class="screen hidden">
+            <nav class="sidebar">
+                <div class="nav-brand">M</div>
+                <div class="nav-items">
+                    <button class="nav-item active" onclick="showTab('dashboard')">Home</button>
+                    <button class="nav-item" onclick="showTab('booking')">Doctors</button>
+                    <button class="nav-item" onclick="showTab('medication')">Meds</button>
+                    <button class="nav-item" onclick="showTab('history')">History</button>
+                    <button class="nav-item" onclick="showTab('profile')">Profile</button>
+                </div>
+                <div class="logout-container">
+                    <button class="btn-logout" onclick="logout()">Logout</button>
+                </div>
+            </nav>
+
+            <main class="content">
+                <header class="content-header">
+                    <div class="user-greeting">
+                        <h2 id="welcome-text">Hello, John!</h2>
+                        <p id="current-date">Today is Friday, March 13</p>
+                    </div>
+                    <div class="header-actions">
+                        <div class="notification-badge">🔔</div>
+                        <img id="header-profile-pic" src="https://ui-avatars.com/api/?name=User&background=008080&color=fff" alt="Avatar" class="avatar-sm">
+                    </div>
+                </header>
+
+                <!-- Tabs -->
+                <div id="tab-dashboard" class="tab-content active">
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <h3>Next Appointment</h3>
+                            <div id="next-appt-card" class="card-inner empty">No upcoming appointments</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Daily Meds Progress</h3>
+                            <canvas id="medsChart" width="100" height="100"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="section-row">
+                        <div class="card meds-list-card">
+                            <div class="card-header">
+                                <h3>Today's Medications</h3>
+                                <button class="btn-text" onclick="showTab('medication')">View All</button>
+                            </div>
+                            <div id="dash-meds-list" class="item-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-booking" class="tab-content">
+                    <div class="section-header">
+                        <h3>Book an Appointment</h3>
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search doctor or specialty..." id="doctor-search" onkeyup="filterDoctors()">
+                        </div>
+                    </div>
+                    <div id="doctors-grid" class="grid"></div>
+                </div>
+
+                <div id="tab-medication" class="tab-content">
+                    <div class="section-header">
+                        <h3>Medication Reminders</h3>
+                        <button class="btn-action" onclick="showAddMedDialog()">+ New Reminder</button>
+                    </div>
+                    <div id="meds-list" class="list"></div>
+                </div>
+
+                <div id="tab-history" class="tab-content">
+                    <h3>Appointment History</h3>
+                    <div class="history-tabs">
+                        <button class="hist-tab active">Upcoming</button>
+                        <button class="hist-tab">Completed</button>
+                        <button class="hist-tab">Cancelled</button>
+                    </div>
+                    <div id="history-list" class="list"></div>
+                </div>
+
+                <div id="tab-profile" class="tab-content">
+                    <div class="profile-editor">
+                        <div class="profile-header">
+                            <div class="profile-avatar-container">
+                                <img id="p-avatar" src="https://ui-avatars.com/api/?name=User&background=008080&color=fff" alt="Profile">
+                                <button class="btn-overlay" onclick="document.getElementById('file-input').click()">Edit</button>
+                                <input type="file" id="file-input" style="display:none" onchange="uploadPhoto(this)">
+                            </div>
+                            <h2 id="p-name">John Doe</h2>
+                            <p id="p-email">john@medilink.com</p>
+                        </div>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label>Phone Number</label>
+                                <input type="text" id="p-phone">
+                            </div>
+                            <div class="input-group">
+                                <label>Emergency Contact Name</label>
+                                <input type="text" id="p-em-name">
+                            </div>
+                            <div class="input-group">
+                                <label>Emergency Contact Phone</label>
+                                <input type="text" id="p-em-phone">
+                            </div>
+                        </div>
+                        <button class="btn-primary" onclick="saveProfileChanges()">Save Changes</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Admin Screen -->
+        <div id="admin-screen" class="screen hidden">
+             <div class="admin-wrapper">
+                 <aside class="admin-sidebar">
+                    <div class="brand">M</div>
+                    <button class="nav-item active">User Management</button>
+                    <button class="btn-logout" onclick="logout()">Logout</button>
+                 </aside>
+                 <main class="admin-content">
+                    <header>
+                        <h1>Admin Dashboard</h1>
+                        <p id="admin-stats-summary">Total System Users: Loading...</p>
+                    </header>
+                    <div class="user-table-card">
+                        <table id="user-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Join Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="user-rows"></tbody>
+                        </table>
+                    </div>
+                 </main>
+             </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="booking-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('booking-modal')">&times;</span>
+                <div id="booking-details"></div>
+                <div class="time-slots" id="modal-slots"></div>
+                <button class="btn-primary" id="btn-confirm-booking">Confirm Booking</button>
+            </div>
+        </div>
+
+        <div id="med-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('med-modal')">&times;</span>
+                <h2>Add Medication</h2>
+                <div class="input-group">
+                    <label>Medicine Name</label>
+                    <input type="text" id="m-name" placeholder="e.g. Aspirin">
+                </div>
+                <div class="input-group">
+                    <label>Dosage</label>
+                    <input type="text" id="m-dosage" placeholder="e.g. 500mg">
+                </div>
+                <div class="input-group">
+                    <label>Time</label>
+                    <input type="time" id="m-time">
+                </div>
+                <button class="btn-primary" onclick="addMedication()">Save Medication</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
